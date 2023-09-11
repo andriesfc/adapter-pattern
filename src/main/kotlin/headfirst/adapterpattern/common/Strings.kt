@@ -1,0 +1,3 @@
+package headfirst.adapterpattern.common
+
+
