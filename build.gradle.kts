@@ -1,4 +1,3 @@
-
 plugins {
     kotlin("jvm") version "1.9.10"
     application
@@ -24,7 +23,11 @@ sourceSets.main.configure {
     resources {
         srcDirs("src/main/kotlin")
         include("**/*.kt")
-        exclude("/commandline", "/common", "/main.kt")
+        exclude(
+            "headfirst/adapterpattern/main.kt",
+            "headfirst/adapterpattern/common/",
+            "headfirst/adapterpattern/commandline/"
+        )
     }
 }
 
