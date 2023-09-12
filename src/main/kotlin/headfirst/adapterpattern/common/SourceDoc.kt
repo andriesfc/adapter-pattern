@@ -4,15 +4,14 @@ import java.net.URL
 
 data class SourceDoc(
     val title: String,
-    val path: String,
-    val resolved: URL?,
+    val document: String,
+    val resourceUrl: URL?,
 ) {
     companion object {
-
-        inline fun <reified T> of(title: String, path: String = "${T::class.java.simpleName}.kt") = SourceDoc(
+        inline fun <reified T> of(title: String, location: String = "${T::class.java.simpleName}.kt") = SourceDoc(
             title = title,
-            path = path,
-            resolved = T::class.java.getResource(path)
+            document = location,
+            resourceUrl = T::class.java.getResource(location)
         )
     }
 }

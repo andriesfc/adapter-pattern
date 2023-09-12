@@ -21,3 +21,7 @@ fun demoUseOfVector(x: Double, y: Double, z: Double) {
         println("${componentNames[index]} := $value")
     }
 }
+
+fun main() {
+    demoUseOfVector(16.0, 18.9, -16.2)
+}
