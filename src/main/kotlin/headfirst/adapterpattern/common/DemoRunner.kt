@@ -14,7 +14,7 @@ abstract class DemoRunner<T : DemoRunner<T>>(
     help = demoCommandDescription
 ) {
 
-    private val sourceListing = demoSourceDocs.filter { doc -> doc.resourceUrl != null }.sortedBy { it.document }
+    private val sourceListing = demoSourceDocs.filter { doc -> doc.resourceUrl != null }.sortedBy { it.resource }
 
     private val sourceAction: SourceAction? by option(
         names = arrayOf("--source"),
@@ -72,7 +72,7 @@ abstract class DemoRunner<T : DemoRunner<T>>(
             .map { (i, doc) ->
                 arrayOf(
                     (i + 1).toString(),
-                    doc.document,
+                    doc.resource,
                     doc.title
                 )
             }
